@@ -1,0 +1,22 @@
+{
+  "name": "shoppingapi",
+  "version": "1.0.0",
+  "description": "Cart Api",
+  "main": "app.js",
+  "scripts": {
+    "build":"cd client && npm run build",
+    "install-client":"cd client && npm install",
+    "heroku-postbuild":"npm run install-client && npm run build",
+    "start": "node app.js",
+    "nodemon": "nodemon app.js"
+  },
+  "author": "Varshith Reddy",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7",
+    "nodemon": "^2.0.7"
+  }
+}
