@@ -43,7 +43,7 @@ passport.serializeUser((user, cb) => {
   });
 
 
-app.use(cors()) 
+app.use(cors({origin: true, credentials: true})) 
 
 // Routes
 const item = require('./routes/api/item')
