@@ -2,7 +2,7 @@ const express = require('express')
 const jwt  = require('jsonwebtoken')
 
 // Middle ware for checking a valid token and assingning result to req.user(the method we did on own)
-const auth = (req,res,next)=>{
+const auth = async(req,res,next)=>{
     const bearer = req.headers['authorization']
     const token = bearer.split(' ')[1] // Taking token from header
     console.log(token)
@@ -12,7 +12,7 @@ const auth = (req,res,next)=>{
     // Checking valid token
         // If valid returns the userId
     try {
-        const data = jwt.verify(token,process.env.JWT_SECRET)
+        const data = await jwt.verify(token,process.env.JWT_SECRET)
             req.user = data
             console.log(data)
             next()
