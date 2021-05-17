@@ -54,6 +54,7 @@ router.get('/user/logout',(req,res)=>{
 })
 
 router.get('/user',auth,async (req,res)=>{
+    console.log("Hiii1")
     const user = await User.findById(req.user.userId)
     res.json(user).status(200)
 })
